@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Sistemas</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container1">
+        <h1>Simulación de Sistemas</h1>
+        <h2>Integral con Monte Carlo</h2>
+        <h4>Presentado por Andrés Rosales, Daniele Mosquera y Alexander González</h4>
+    </div>
+    <div class="container2">
+        <label for="numSim"><b>Ingrese la cantidad de simulaciones a ejecutar:</b></label>
+        <br>
+        <input type="number" name="numSim" id="numSim" placeholder="# Sim" min="1">
+        <br><br>
+        <button id="btn" onclick="start()">Iniciar Simulación</button>
+        <br><br>
+        <div class="grid">
+            <div>RESULTADO CORRECTO <br>24</div>
+            <div>RESULTADO SIMULACIÓN <br> </div>
+            <div>MARGEN DE ERROR <br> </div>
+        </div>
+    </div>
+</body>
+</html>
