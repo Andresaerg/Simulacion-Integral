@@ -7,7 +7,7 @@ h1, h2, h4{
 }
 
 body{
-    background-color: #eaeaea;
+    background-image: linear-gradient(45deg, red, blue);
     padding: 10px;
 }
 
@@ -35,6 +35,7 @@ h1{
     margin-bottom: 10px;
     margin-top: 20px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    height: fit-content;
 }
 
 .container2 button{
@@ -43,7 +44,8 @@ h1{
     border: 1px solid;
     color: white;
     width: 175px;
-    height: 40px;
+    min-height: 40px;
+    max-height: fit-content;
     transition: 250ms;
 }
 
@@ -85,11 +87,40 @@ td{
 }
 
 input[type=number]{
-    width: 60px;
+    width: 75px;
+    height: 35px;
 }
 
 .grid{
-    display: flex;
+    display: grid;
     justify-content: space-around;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:    "title1 . title3"
+                            "linea linea linea"
+                            ". title2 .";
+}
+
+.title1{
+    grid-area: title1;
+    text-align: center;
+    color: black;
+}
+
+.title2{
+    grid-area: title2;
+    text-align: center;
+    color: black;
+}
+
+.title3{
+    grid-area: title3;
+    text-align: center;
+    color: black;
+}
+
+.linea{
+    grid-area: linea;
+    text-align: center;
+    color: black;
 }

@@ -7,6 +7,8 @@
     <title>Simulación de Sistemas</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container1">
@@ -20,11 +22,35 @@
         <input type="number" name="numSim" id="numSim" placeholder="# Sim" min="1">
         <br><br>
         <button id="btn" onclick="start()">Iniciar Simulación</button>
-        <br><br>
+        <br><br><br>
         <div class="grid">
-            <div>RESULTADO CORRECTO <br><strong>24</strong></div>
-            <div>RESULTADO SIMULACIÓN <br><strong><span id="simResult"></span></strong></div>
-            <div>MARGEN DE ERROR <br><strong><span id="errorMargin"></span></strong></div>
+            <div class="title1"><strong id="title1"></strong><br><strong><span id="realResult"></span></strong></div>
+            <div class="title2"><strong id="title2"></strong><br><strong><span id="simResult"></span></strong></div>
+            <div class="title3"><strong id="title3"></strong><br><strong><span id="errorMargin"></span></strong></div>
+            <div class="linea"></div>
+        </div>
+        <br><br><br><br><br><br><br>
+        <!-- Button trigger modal -->
+        <div id="modalBtn"></div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Integral</h5>
+                    </div>
+                    <div class="modal-body">
+                        <img src="integral-AR.png" alt="Integral">
+                        <hr>
+                        <h5>La solución de la misma:</h5>
+                        <img src="Solucion-Integral_AR-.png" alt="Solucionada">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
