@@ -26,27 +26,31 @@ integral con lim sup 3, lim inf 2: 3x^2+2x dx
     }
 
     function sumar_array(array_numeros){
-        
-        var suma = 0;
-        
+        let suma = 0;
         array_numeros.forEach (function(numero){
             suma += numero;
         });
-        
-        return suma;
-        
+        return suma;   
+    }
+
+    function potenciar_array(array_numeros){
+        let potencia = 2;
+        let almacenar = [];
+        array_numeros.forEach (function(numero){
+            almacenar.push(Math.pow(numero, potencia));
+        });
+        return almacenar;   
     }
 
     function start(){
 
         let monteCarlo = false;
         let final;
-        let mError;                                           // es el margen de error final      
-        let muestra;                                          // funciona como el tamaño de la muestra
-        let desviacion;                                       // desviación estándar
-        let standardError;                                    // error estándar
-        let numSim = document.getElementById("numSim").value; // establece la cantidad de iteraciones y también funciona como el "tamaño de la población"
-        
+        let numSim = document.getElementById("numSim").value; // establece la cantidad de iteraciones y también funciona como el "tamaño total de la muestra"
+        if(numSim == 0){
+            numSim += 1;
+        }
+
         while(monteCarlo != true){
             let prueba = [];
             for(let i = 1; i <= numSim; i++){
@@ -62,10 +66,14 @@ integral con lim sup 3, lim inf 2: 3x^2+2x dx
                     monteCarlo = true;
                 }
             }
-            let media = sumar_array(prueba) / numSim;
+            let mediaAr = sumar_array(prueba) / numSim;
+            let errorMargin = Math.abs(mediaAr - 24) / 24 * 100;
             console.log(prueba);
             console.log("La simulación finalizó con el resultado en el intento #"+final);
-            console.log(media);
+            console.log(mediaAr);
+            console.log(errorMargin);
+            document.getElementById("simResult").innerHTML = mediaAr;
+            document.getElementById("errorMargin").innerHTML = errorMargin;
         }
     }
     
