@@ -34,13 +34,15 @@
             let azar = Math.floor(Math.random() * 61);
             prueba.push(azar);
             console.log("INTENTO: "+i+", con resultado = "+azar);
-            if((azar >= 20 && azar <= 23) || (azar >= 25 && azar <= 30)){
+            if((azar >= 22 && azar <= 23) || (azar >= 25 && azar <= 26)){
                 console.log("Se llegó a un resultado cercano: "+azar+". En "+i+" intentos");
                 cuasiFinal += 1;
+                monteCarlo = true;
             }
             if(azar == 24){
                 console.log("Se llegó al resultado correcto: "+azar+". En "+i+" intentos");
                 final = i;
+                monteCarlo = true;
             }
         }
         
@@ -83,33 +85,3 @@
             }
         }
     }
-
-    const openEls = document.querySelectorAll("[data-open]");
-    const closeEls = document.querySelectorAll("[data-close]");
-    const isVisible = "is-visible";
-
-    for (const el of openEls) {
-    el.addEventListener("click", function() {
-        const modalId = this.dataset.open;
-        document.getElementById(modalId).classList.add(isVisible);
-    });
-    }
-
-    for (const el of closeEls) {
-    el.addEventListener("click", function() {
-        this.parentElement.parentElement.parentElement.classList.remove(isVisible);
-    });
-    }
-
-    document.addEventListener("click", e => {
-    if (e.target == document.querySelector(".modal.is-visible")) {
-        document.querySelector(".modal.is-visible").classList.remove(isVisible);
-    }
-    });
-
-    document.addEventListener("keyup", e => {
-    // if we press the ESC
-    if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
-        document.querySelector(".modal.is-visible").classList.remove(isVisible);
-    }
-    });
